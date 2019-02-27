@@ -17,6 +17,16 @@ def index():
 def main():
     return static_file("main.js", root="")
 
+
+@route("/grid.csv")
+def grid():
+    return static_file("grid.csv", root="")
+
+
+@route("/JSONmaker")
+def JSONmaker():
+    return static_file("JSONmaker", root="")
+
 """
 @route("/process")
 def processing():
