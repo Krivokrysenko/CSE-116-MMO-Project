@@ -8,4 +8,4 @@ def csvtoarray():
         reader = csv.reader(file)
         for line in reader:
             result.append(line)
-    return result
+    return json.dumps(result)
