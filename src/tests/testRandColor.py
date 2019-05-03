@@ -1,5 +1,5 @@
 import unittest
-import randomColorGen
+from NO_TOUCHIE import randomColorGen
 
 
 def testRandColor(rgb,color):
@@ -14,9 +14,9 @@ def testRandColor(rgb,color):
 
 class MyTestCase(unittest.TestCase):
     def test_something(self):
-        self.assertEqual(testRandColor(randomColorGen.randomColorGen(0),"red"), True)
-        self.assertEqual(testRandColor(randomColorGen.randomColorGen(1),"blue"), True)
-        self.assertEqual(testRandColor(randomColorGen.randomColorGen(2),"green"), True)
+        self.assertEqual(testRandColor(randomColorGen.randomColorGen(0), "red"), True)
+        self.assertEqual(testRandColor(randomColorGen.randomColorGen(1), "blue"), True)
+        self.assertEqual(testRandColor(randomColorGen.randomColorGen(2), "green"), True)
 
 
 if __name__ == '__main__':

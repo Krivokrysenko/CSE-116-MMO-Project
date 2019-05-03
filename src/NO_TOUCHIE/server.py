@@ -1,7 +1,6 @@
-import bottle
-import JSONmaker
+from NO_TOUCHIE import JSONmaker
 
-from bottle import route, run, static_file, request
+from bottle import route, run, static_file
 
 
 @route("/")

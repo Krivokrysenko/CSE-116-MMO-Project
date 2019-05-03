@@ -1,9 +1,7 @@
 #  module imports
-import os, sys
 import pygame
-from pygame.locals import *
 #  file imports
-import pixelgridcapture.hexcodehandlers as hch
+import desktop.communicator as hch
 
 #  checks for fonts and sounds, can be removed
 if not pygame.font: print("Warning, fonts disabled")
@@ -48,6 +46,11 @@ pygame.draw.rect(screen, (100, 100, 100), hexcodebox, 0)
 instruct2 = "Click on a color to recieve your hex code"
 instruct2render = font.render(instruct2, True, (255, 255, 255))
 screen.blit(instruct2render, (150, 550))
+
+#  cap note
+instruct3 = "Note: clicks are capped at one per 1/4 second"
+instruct3render = font.render(instruct3, True, (255, 255, 255))
+screen.blit(instruct3render, (50, 950))
 
 #  red
 redbox = pygame.Rect(50, 650, 100, 100)
@@ -163,10 +166,10 @@ while not done and mainmenu:
                     if result == "none":
 
                         #  display error message
-                        error = "Hex code not found"
+                        error = "Hex code not found."
                         errortext = font.render(error, True, (255, 255, 255))
                         screen.blit(errortext, (350, 450))
-                        error = "(You need to include #)"
+                        error = "Please try again."
                         errortext = font.render(error, True, (255, 255, 255))
                         screen.blit(errortext, (350, 500))
 
@@ -197,7 +200,7 @@ while not done and mainmenu:
 screen.fill((255, 255, 255))
 
 #  assigns stuff to new player
-if hexcode == "":
+if hexcode == "" and not done:
 
     #  generate the hex code
     hexcode = hch.giveusernewcode(colorfamily)
@@ -239,7 +242,7 @@ gridx = 0
 gridy = 0
 for row in arrayofhexs:
     for element in row:
-        box = pygame.Rect(gridx * 10, gridy * 10, 10, 10)
+        box = pygame.Rect(gridx * 20, gridy * 20, 20, 20)
         pygame.draw.rect(screen, pygame.Color(element), box, 0)
         gridx += 1
         gridofboxes.append(box)
@@ -281,7 +284,7 @@ while not done:
     gridy = 0
     for row in arrayofhexs:
         for element in row:
-            box = pygame.Rect(gridx * 10, gridy * 10, 10, 10)
+            box = pygame.Rect(gridx * 20, gridy * 20, 20, 20)
             pygame.draw.rect(screen, pygame.Color(element), box, 0)
             gridx += 1
             gridofboxes.append(box)
