@@ -42,6 +42,12 @@ def update():
     return translator.updategrid(hex, x, y)
 
 
+@route("/javascriptexclusive")
+def code3():
+    fam = request.query["fam"]
+    return translator.getcolorforjavascript(fam)
+
+
 """
 @route("/process2")
 def processing2():

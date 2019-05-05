@@ -1,5 +1,6 @@
 import json
 import csv
+import randomcolor
 
 
 def csvtoarray():
@@ -46,3 +47,10 @@ def updategrid(hex, x, y):
         writer = csv.writer(file)
         writer.writerows(storage)
     return hex.strip("#")
+
+
+def getcolorforjavascript(family):
+    rc = randomcolor.RandomColor()
+    rando = rc.generate(hue=family)
+    actualhexcode = rando[0].strip("#")
+    return writecode(actualhexcode, family)

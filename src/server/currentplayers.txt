@@ -36,3 +36,11 @@
 #eab08c orange
 #44bf22 green
 #43e8b6 green
+#5f40bc blue
+#030177 blue
+#70adea blue
+#71a3f2 blue
+#54c6d3 blue
+#f4f4f4 monochrome
+#f47333 orange
+#727272 monochrome

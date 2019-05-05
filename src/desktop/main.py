@@ -48,7 +48,7 @@ instruct2render = font.render(instruct2, True, (255, 255, 255))
 screen.blit(instruct2render, (150, 550))
 
 #  cap note
-instruct3 = "Note: clicks are capped at one per 1/4 second"
+instruct3 = "Note: clicks are capped at one per 1/10 second"
 instruct3render = font.render(instruct3, True, (255, 255, 255))
 screen.blit(instruct3render, (50, 950))
 
@@ -254,7 +254,7 @@ pygame.display.flip()
 while not done:
 
     #  limit updates
-    pygame.time.Clock().tick(15)
+    pygame.time.Clock().tick(100)
 
     #  input handling
     for event in pygame.event.get():
