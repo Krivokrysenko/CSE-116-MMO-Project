@@ -1,6 +1,6 @@
 import unittest
 
-from pixelgridcapture import hexcodehandlers
+import pixelgridcapture
 
 
 class MyTestCase(unittest.TestCase):
